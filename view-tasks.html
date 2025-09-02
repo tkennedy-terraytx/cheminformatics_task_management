@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tasks | ChemTask Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chemistry-background">
+        <div class="molecule floating-molecule-1">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+        <div class="molecule floating-molecule-2">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+        <div class="molecule floating-molecule-3">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="molecule-icon">
+                    <div class="atom"></div>
+                    <div class="bond bond1"></div>
+                    <div class="atom atom2"></div>
+                    <div class="bond bond2"></div>
+                    <div class="atom atom3"></div>
+                </div>
+                <span>ChemTask Manager</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="create-task.html" class="nav-link">Create Task</a>
+                <a href="view-tasks.html" class="nav-link active">View Tasks</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header has-actions">
+            <div class="header-content">
+                <h1>Task Overview</h1>
+                <p class="subtitle">Monitor and manage your cheminformatics research tasks</p>
+            </div>
+            <div class="header-actions">
+                <a href="create-task.html" class="btn-primary">
+                    <span class="btn-icon">➕</span>
+                    New Task
+                </a>
+            </div>
+        </header>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <div class="stat-number" id="totalTasks">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-content">
+                    <div class="stat-number" id="completedTasks">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-content">
+                    <div class="stat-number" id="pendingTasks">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔴</div>
+                <div class="stat-content">
+                    <div class="stat-number" id="criticalTasks">0</div>
+                    <div class="stat-label">Critical</div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <section class="tasks-section">
+                <div class="section-header">
+                    <h2>Active Tasks</h2>
+                    <div class="filter-controls">
+                        <select id="filterProject" class="filter-select">
+                            <option value="">All Projects</option>
+                        </select>
+                        <select id="filterAssignee" class="filter-select">
+                            <option value="">All Assignees</option>
+                        </select>
+                        <select id="filterPriority" class="filter-select">
+                            <option value="">All Priorities</option>
+                            <option value="critical">Critical</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                        <select id="filterStatus" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="tasksContainer" class="tasks-container">
+                    <div class="empty-state">
+                        <div class="flask-icon">⚗️</div>
+                        <p>No tasks yet. Start by creating your first research task!</p>
+                        <a href="create-task.html" class="btn-primary">Create Task</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="view-tasks.js"></script>
+</body>
+</html>

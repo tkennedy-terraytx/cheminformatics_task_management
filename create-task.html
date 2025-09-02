@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task | ChemTask Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chemistry-background">
+        <div class="molecule floating-molecule-1">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+        <div class="molecule floating-molecule-2">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+        <div class="molecule floating-molecule-3">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="molecule-icon">
+                    <div class="atom"></div>
+                    <div class="bond bond1"></div>
+                    <div class="atom atom2"></div>
+                    <div class="bond bond2"></div>
+                    <div class="atom atom3"></div>
+                </div>
+                <span>ChemTask Manager</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="create-task.html" class="nav-link active">Create Task</a>
+                <a href="view-tasks.html" class="nav-link">View Tasks</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>Create New Task</h1>
+            <p class="subtitle">Add a new research task to your cheminformatics workflow</p>
+        </header>
+
+        <main>
+            <div class="create-task-container">
+                <div class="task-form-card">
+                    <div class="form-header">
+                        <div class="form-icon">⚗️</div>
+                        <h2>Task Details</h2>
+                    </div>
+                    
+                    <form id="taskForm" class="task-form">
+                        <div class="form-group">
+                            <label for="taskName">
+                                <span class="label-icon">🔬</span>
+                                Task Name
+                            </label>
+                            <input type="text" id="taskName" name="taskName" required placeholder="e.g., Molecular docking analysis for compound X">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskDescription">
+                                <span class="label-icon">📝</span>
+                                Description
+                            </label>
+                            <textarea id="taskDescription" name="taskDescription" rows="4" required 
+                                placeholder="Describe the task objectives, methodology, and expected outcomes..."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project">
+                                    <span class="label-icon">🧪</span>
+                                    Associated Project
+                                </label>
+                                <input type="text" id="project" name="project" required 
+                                    placeholder="e.g., Drug Discovery Pipeline">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assignee">
+                                    <span class="label-icon">👨‍🔬</span>
+                                    Assigned To
+                                </label>
+                                <input type="text" id="assignee" name="assignee" required 
+                                    placeholder="e.g., Dr. Smith">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="priority">
+                                <span class="label-icon">⚡</span>
+                                Priority Level
+                            </label>
+                            <div class="priority-selector">
+                                <label class="priority-option">
+                                    <input type="radio" name="priority" value="low">
+                                    <span class="priority-visual priority-low">
+                                        <span class="priority-icon">🟢</span>
+                                        <span class="priority-label">Low</span>
+                                    </span>
+                                </label>
+                                
+                                <label class="priority-option">
+                                    <input type="radio" name="priority" value="medium" checked>
+                                    <span class="priority-visual priority-medium">
+                                        <span class="priority-icon">🟡</span>
+                                        <span class="priority-label">Medium</span>
+                                    </span>
+                                </label>
+                                
+                                <label class="priority-option">
+                                    <input type="radio" name="priority" value="high">
+                                    <span class="priority-visual priority-high">
+                                        <span class="priority-icon">🟠</span>
+                                        <span class="priority-label">High</span>
+                                    </span>
+                                </label>
+                                
+                                <label class="priority-option">
+                                    <input type="radio" name="priority" value="critical">
+                                    <span class="priority-visual priority-critical">
+                                        <span class="priority-icon">🔴</span>
+                                        <span class="priority-label">Critical</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">
+                                <span class="btn-icon">➕</span>
+                                Create Task
+                            </button>
+                            <button type="reset" class="btn-secondary">
+                                <span class="btn-icon">🔄</span>
+                                Reset Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <h3>Task Created Successfully!</h3>
+                    <p>Your task has been added to the system.</p>
+                    <div class="success-actions">
+                        <a href="create-task.html" class="btn-secondary">Create Another</a>
+                        <a href="view-tasks.html" class="btn-primary">View All Tasks</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="create-task.js"></script>
+</body>
+</html>

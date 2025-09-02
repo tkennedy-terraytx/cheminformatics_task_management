@@ -8,9 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">
+    <div class="chemistry-background">
+        <div class="molecule floating-molecule-1">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+        <div class="molecule floating-molecule-2">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+        <div class="molecule floating-molecule-3">
+            <div class="atom"></div>
+            <div class="bond"></div>
+            <div class="atom"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
                 <div class="molecule-icon">
                     <div class="atom"></div>
                     <div class="bond bond1"></div>
@@ -18,81 +38,98 @@
                     <div class="bond bond2"></div>
                     <div class="atom atom3"></div>
                 </div>
-                <h1>ChemTask Manager</h1>
+                <span>ChemTask Manager</span>
             </div>
-            <p class="subtitle">Organize your cheminformatics research with molecular precision</p>
-        </header>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="create-task.html" class="nav-link">Create Task</a>
+                <a href="view-tasks.html" class="nav-link">View Tasks</a>
+            </div>
+        </div>
+    </nav>
 
-        <main>
-            <section class="task-form-section">
-                <h2>Add New Task</h2>
-                <form id="taskForm" class="task-form">
-                    <div class="form-group">
-                        <label for="taskName">Task Name</label>
-                        <input type="text" id="taskName" name="taskName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="taskDescription">Description</label>
-                        <textarea id="taskDescription" name="taskDescription" rows="3" required></textarea>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="project">Associated Project</label>
-                            <input type="text" id="project" name="project" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="assignee">Assigned To</label>
-                            <input type="text" id="assignee" name="assignee" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="priority">Priority</label>
-                        <select id="priority" name="priority">
-                            <option value="low">Low</option>
-                            <option value="medium" selected>Medium</option>
-                            <option value="high">High</option>
-                            <option value="critical">Critical</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary">Add Task</button>
-                </form>
-            </section>
+    <div class="container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">ChemTask Manager</h1>
+                <p class="hero-subtitle">Organize your cheminformatics research with molecular precision</p>
+                <p class="hero-description">
+                    A specialized task management system designed for chemistry research teams. 
+                    Track experiments, manage research workflows, and collaborate with precision.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="create-task.html" class="btn-primary btn-large">
+                        <span class="btn-icon">🧪</span>
+                        Create Your First Task
+                    </a>
+                    <a href="view-tasks.html" class="btn-secondary btn-large">
+                        <span class="btn-icon">📊</span>
+                        View All Tasks
+                    </a>
+                </div>
+            </div>
 
-            <section class="tasks-section">
-                <div class="section-header">
-                    <h2>Active Tasks</h2>
-                    <div class="filter-controls">
-                        <select id="filterProject" class="filter-select">
-                            <option value="">All Projects</option>
-                        </select>
-                        <select id="filterAssignee" class="filter-select">
-                            <option value="">All Assignees</option>
-                        </select>
-                        <select id="filterPriority" class="filter-select">
-                            <option value="">All Priorities</option>
-                            <option value="critical">Critical</option>
-                            <option value="high">High</option>
-                            <option value="medium">Medium</option>
-                            <option value="low">Low</option>
-                        </select>
-                    </div>
+            <div class="hero-visual">
+                <div class="feature-molecule">
+                    <div class="large-atom atom-1"></div>
+                    <div class="large-bond bond-1"></div>
+                    <div class="large-atom atom-2"></div>
+                    <div class="large-bond bond-2"></div>
+                    <div class="large-atom atom-3"></div>
+                    <div class="large-bond bond-3"></div>
+                    <div class="large-atom atom-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2 class="features-title">Perfect for Research Teams</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research-Focused</h3>
+                    <p>Designed specifically for cheminformatics workflows and research tasks.</p>
                 </div>
                 
-                <div id="tasksContainer" class="tasks-container">
-                    <div class="empty-state">
-                        <div class="flask-icon">⚗️</div>
-                        <p>No tasks yet. Add your first research task above!</p>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Priority Management</h3>
+                    <p>Visual priority indicators help you focus on critical experiments first.</p>
                 </div>
-            </section>
-        </main>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Team Collaboration</h3>
+                    <p>Assign tasks to team members and track project progress together.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Project Tracking</h3>
+                    <p>Organize tasks by research projects and monitor completion status.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-stats" id="quickStats" style="display: none;">
+            <div class="stats-container">
+                <div class="quick-stat">
+                    <div class="stat-number" id="homeTotal">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="stat-number" id="homeCompleted">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="quick-stat">
+                    <div class="stat-number" id="homeProjects">0</div>
+                    <div class="stat-label">Active Projects</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="landing.js"></script>
 </body>
 </html>
