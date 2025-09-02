@@ -123,10 +123,24 @@ class TaskManager {
         const createdDate = new Date(task.createdAt).toLocaleDateString();
         const completedDate = task.completedAt ? new Date(task.completedAt).toLocaleDateString() : null;
         
+        const priorityIcons = {
+            low: '🟢',
+            medium: '🟡', 
+            high: '🟠',
+            critical: '🔴'
+        };
+        
         return `
-            <div class="task-card ${task.completed ? 'task-completed' : ''}" data-task-id="${task.id}">
+            <div class="task-card ${task.completed ? 'task-completed' : ''}" data-task-id="${task.id}" data-priority="${task.priority}">
+                <div class="priority-marker priority-marker-${task.priority}"></div>
                 <div class="task-header">
-                    <h3 class="task-title">${this.escapeHtml(task.name)}</h3>
+                    <div class="task-title-row">
+                        <div class="priority-indicator">
+                            <span class="priority-icon">${priorityIcons[task.priority]}</span>
+                            <span class="priority-text priority-${task.priority}">${task.priority.toUpperCase()}</span>
+                        </div>
+                        <h3 class="task-title">${this.escapeHtml(task.name)}</h3>
+                    </div>
                     <div class="task-actions">
                         <button class="btn-small btn-complete" onclick="taskManager.completeTask(${task.id})">
                             ${task.completed ? 'Reopen' : 'Complete'}

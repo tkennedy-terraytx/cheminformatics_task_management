@@ -234,6 +234,55 @@ body {
     padding: 1.5rem;
     transition: all 0.2s ease;
     position: relative;
+    border-left: 4px solid var(--border-color);
+}
+
+.task-card[data-priority="low"] {
+    border-left-color: #22c55e;
+}
+
+.task-card[data-priority="medium"] {
+    border-left-color: #eab308;
+}
+
+.task-card[data-priority="high"] {
+    border-left-color: #f97316;
+}
+
+.task-card[data-priority="critical"] {
+    border-left-color: #ef4444;
+}
+
+.priority-marker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 0;
+}
+
+.priority-marker-low {
+    border-color: transparent #22c55e transparent transparent;
+}
+
+.priority-marker-medium {
+    border-color: transparent #eab308 transparent transparent;
+}
+
+.priority-marker-high {
+    border-color: transparent #f97316 transparent transparent;
+}
+
+.priority-marker-critical {
+    border-color: transparent #ef4444 transparent transparent;
+    animation: pulse-marker 2s infinite;
+}
+
+@keyframes pulse-marker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 .task-card:hover {
@@ -247,6 +296,59 @@ body {
     align-items: flex-start;
     margin-bottom: 1rem;
     gap: 1rem;
+}
+
+.task-title-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.priority-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.priority-icon {
+    font-size: 1rem;
+}
+
+.priority-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.125rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.priority-text.priority-low {
+    color: #166534;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.priority-text.priority-medium {
+    color: #a16207;
+    background: rgba(234, 179, 8, 0.1);
+}
+
+.priority-text.priority-high {
+    color: #c2410c;
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.priority-text.priority-critical {
+    color: #dc2626;
+    background: rgba(239, 68, 68, 0.1);
+    animation: pulse-text 2s infinite;
+}
+
+@keyframes pulse-text {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
 }
 
 .task-title {
@@ -401,6 +503,20 @@ body {
     
     .task-meta {
         grid-template-columns: 1fr;
+    }
+    
+    .task-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .task-actions {
+        align-self: flex-end;
+    }
+    
+    .priority-indicator {
+        justify-content: flex-start;
     }
     
     .logo {
