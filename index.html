@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemTask Manager | Cheminformatics Task Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="molecule-icon">
+                    <div class="atom"></div>
+                    <div class="bond bond1"></div>
+                    <div class="atom atom2"></div>
+                    <div class="bond bond2"></div>
+                    <div class="atom atom3"></div>
+                </div>
+                <h1>ChemTask Manager</h1>
+            </div>
+            <p class="subtitle">Organize your cheminformatics research with molecular precision</p>
+        </header>
+
+        <main>
+            <section class="task-form-section">
+                <h2>Add New Task</h2>
+                <form id="taskForm" class="task-form">
+                    <div class="form-group">
+                        <label for="taskName">Task Name</label>
+                        <input type="text" id="taskName" name="taskName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDescription">Description</label>
+                        <textarea id="taskDescription" name="taskDescription" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="project">Associated Project</label>
+                            <input type="text" id="project" name="project" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="assignee">Assigned To</label>
+                            <input type="text" id="assignee" name="assignee" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                            <option value="critical">Critical</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Add Task</button>
+                </form>
+            </section>
+
+            <section class="tasks-section">
+                <div class="section-header">
+                    <h2>Active Tasks</h2>
+                    <div class="filter-controls">
+                        <select id="filterProject" class="filter-select">
+                            <option value="">All Projects</option>
+                        </select>
+                        <select id="filterAssignee" class="filter-select">
+                            <option value="">All Assignees</option>
+                        </select>
+                        <select id="filterPriority" class="filter-select">
+                            <option value="">All Priorities</option>
+                            <option value="critical">Critical</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="tasksContainer" class="tasks-container">
+                    <div class="empty-state">
+                        <div class="flask-icon">⚗️</div>
+                        <p>No tasks yet. Add your first research task above!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
